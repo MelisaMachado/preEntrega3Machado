@@ -1,0 +1,249 @@
+/*mobile first 0px - 500px*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+header {
+    font-size: xx-large;
+    display: grid;
+    justify-content: center;
+}
+
+/*videos recomendados*/
+
+.titulo_principal {
+    text-align: start;
+    font-weight: bolder;
+}
+
+/*aldeas*/
+.titulo{
+    text-align: start;
+    font-weight: bolder;
+}
+.contenedor{
+    background-color: white;
+}
+
+/*zona fan*/
+.titulo_principaldos{
+    text-align: start;
+    font-weight:bolder;
+}
+
+header,
+h2 {
+    color: black;
+}
+
+p {
+    font-size: large;
+    display: grid;
+    justify-content: center;
+}
+
+
+footer {
+    padding: 15px;
+    background-color: orangered;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+/*zona fan*/
+
+.fan {
+    display: grid;
+    justify-content: center;
+}
+
+/*DECLARO NOMBRE DE AREAS PARA LA GRILLA*/
+
+header {
+    grid-area: header;
+}
+
+.contenido {
+    grid-area: contenido;
+
+}
+
+nav {
+    grid-area: nav;
+}
+
+aside {
+    grid-area: blog;
+}
+
+
+.galeria_grid {
+    grid-area: galeria;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.envoltura {
+    background-color: rgb(244, 82, 23);
+    margin-bottom: 1.5em;
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "header"
+        "nav"
+        "contenido"
+        "blog"
+        "galeria"
+        "footer";
+}
+
+.padre {
+    background-color: rgb(248, 192, 89);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    justify-items: center;
+}
+
+img {
+    width: 300px;
+    height: 250px;
+    border: 8px solid gold;
+    margin-top: 15px;
+}
+
+@media (min-width:500px) {
+    .envoltura {
+        margin: 0;
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "header    header"
+            "nav       nav"
+            "blog      contenido"
+            "galeria    galeria"
+            "footer     footer";
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul,
+    article,
+    aside {
+        color: black;
+        border: 3px solid darkgrey;
+    }
+
+    img {
+        width: 350px;
+        height: 300px;
+    }
+
+    footer {
+        margin-top: 0;
+    }
+}
+
+@media(min-width:768px) {
+    nav {
+        background-color: rgb(255, 111, 58);
+        margin-bottom: 1.5em;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas: "header header header"
+            "nav contenido blog"
+            "nav contenido"
+            "galeria galeria galeria"
+            "footer footer footer";
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid black;
+    }
+
+    nav ul,
+    article,
+    aside {
+        color: black;
+        border: 3px solid orange;
+    }
+
+    header,
+    h1,
+    h2,
+    a {
+        color: black;
+    }
+
+    .galeria_grid {
+        background-color: orangered;
+    }
+
+    .padre {
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        margin: 3em;
+    }
+
+    img {
+        border: 5px solid goldenrod;
+        width: 200px;
+        height: 150px;
+    }
+
+    footer {
+        margin-top: 1.5em;
+    }
+
+}
+
+@media(min-width:1024px) {
+    body {
+        background-color: orangered;
+    }
+
+    .envoltura {
+        color: black;
+
+    }
+
+    .padre {
+        padding: 1.5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        margin: 0;
+    }
+
+    img {
+        width: 475px;
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    footer {
+        background-color: rgb(255, 111, 58);
+    }
+
+}
